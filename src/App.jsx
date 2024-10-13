@@ -2,6 +2,8 @@
 import React from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
+import Icon from './assets/icon.svg'
+import Button from './assets/button.svg'
 
 const App = () => {
   return (
@@ -18,15 +20,15 @@ const App = () => {
           {/* Sub-Card 1 */}
           <div className="sub-card">
             <div className="sub-card-content">
-              <div className="sub-card-title">
+              <p className="sub-card-title">
                 Re-designed the zero-g doggie bags. No more spills!
-              </div>
+              </p>
               <div className="sub-card-footer">
                 <div className="progress-info">
-                  <span className="icon">🔒</span>
+                  <img className="icon" src={Icon} />
                   <span className="progress-text">64%</span>
                 </div>
-                <button className="ellipsis-button">⋯</button>
+                <img className="ellipsis-button" src={Button} />
               </div>
             </div>
           </div>
@@ -34,19 +36,19 @@ const App = () => {
           {/* Sub-Card 2 */}
           <div className="sub-card">
             <div className="sub-card-content">
-              <div className="sub-card-title">Travel & Relocation Support</div>
+              <p className="sub-card-title">Travel & Relocation Support</p>
               <div className="sub-card-footer">
                 <div className="progress-info">
-                  <span className="icon">🔒</span>
+                <img className="icon" src={Icon} />
                   <span className="progress-text">12%</span>
                 </div>
-                <button className="ellipsis-button">⋯</button>
+                <img className="ellipsis-button" src={Button} />
               </div>
             </div>
           </div>
 
           {/* Tombol Tambah Task */}
-          <button className="add-task-button">+ Create new task</button>
+          <button className="add-task-button"> <span>+</span> Create new task</button>
         </div>
       </section>
     </div>
