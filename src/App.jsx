@@ -1,54 +1,61 @@
-// src/App.jsx
+// App.jsx
 import React from 'react';
 import './App.css';
+import SubCard from './components/SubCard';
 import Sidebar from './components/Sidebar';
-import Icon from './assets/icon.svg'
-import Button from './assets/button.svg'
+import Card from './components/Card';
 
 const App = () => {
+  const datas = [
+    {
+      q : "Q1 2019",
+      bulan : "January - March",
+      cards: [
+        {
+          title: "Re-designed the zero-g doggie bags. No more spills!",
+          progress: "64%"
+        },
+        {
+          title: "Travel & Relocation Support",
+          progress: "12%"
+        },
+      ]
+    },
+    {
+      q : "Q2 2019",
+      bulan : "April - June",
+      cards: []
+    },
+    {
+      q : "Q3 2019",
+      bulan : "July - September",
+      cards: [
+        {
+          title: "Bundle interplanetary analytics for improved transmission",
+          progress: "90%"
+        },
+      ]
+    },
+    {
+      q : "Q4 2019",
+      bulan : "October - December",
+      cards: [
+        {
+          title: "Data Migration: Performance & Culture End Game",
+          progress: "63%"
+        },
+      ]
+    },
+  ]
   return (
     <div className="container">
       <Sidebar />
       <section className="section">
         <h1>Product Roadmap</h1>
-
-        {/* Card Utama */}
-        <div className="card-utama">
-          <h2 className="card-utama-title">Q1 2019</h2>
-          <p className="card-utama-date">January - March</p>
-
-          {/* Sub-Card 1 */}
-          <div className="sub-card">
-            <div className="sub-card-content">
-              <p className="sub-card-title">
-                Re-designed the zero-g doggie bags. No more spills!
-              </p>
-              <div className="sub-card-footer">
-                <div className="progress-info">
-                  <img className="icon" src={Icon} />
-                  <span className="progress-text">64%</span>
-                </div>
-                <img className="ellipsis-button" src={Button} />
-              </div>
-            </div>
-          </div>
-
-          {/* Sub-Card 2 */}
-          <div className="sub-card">
-            <div className="sub-card-content">
-              <p className="sub-card-title">Travel & Relocation Support</p>
-              <div className="sub-card-footer">
-                <div className="progress-info">
-                <img className="icon" src={Icon} />
-                  <span className="progress-text">12%</span>
-                </div>
-                <img className="ellipsis-button" src={Button} />
-              </div>
-            </div>
-          </div>
-
-          {/* Tombol Tambah Task */}
-          <button className="add-task-button"> <span>+</span> Create new task</button>
+        <div className="container-card">
+         {datas.map((data) => (
+          <Card key={data.q} title={data.q} bulan={data.bulan} cards={data.cards}/>
+         ))}
         </div>
       </section>
     </div>
